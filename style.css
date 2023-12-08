@@ -1,7 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 16px;
-  width: 16px;
+  height: 256px;
+  width: 256px;
   flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
 }
