@@ -16,6 +16,7 @@
 // }
 
 const container = document.querySelector(".container");
+
 function canvasGen(x) {
   totalPixels = x * x - 1;
   canvasPixels = 8 * x;
@@ -24,6 +25,7 @@ function canvasGen(x) {
     square.style.width = "8px";
     square.style.height = "8px";
     square.style.backgroundColor = "white";
+    square.classList.add("square");
     container.appendChild(square);
     container.style.width = canvasPixels + "px";
     container.style.height = canvasPixels + "px";
@@ -37,6 +39,26 @@ function canvasGen(x) {
     });
   }
 }
+
 canvasGen(50);
+
+function cleanCanvas() {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+const changeSizeBtn = document.querySelector(".canvasBtn");
+changeSizeBtn.addEventListener("click", (e) => {
+  userSize = prompt("Change the canvas size", "50");
+  if (userSize < 16) {
+    alert(`${userSize} is too small. It has to be bigger than 16.`);
+  } else if (userSize > 80) {
+    alert(`${userSize} is too big. It has to be smaller than 80.`);
+  } else {
+    cleanCanvas();
+    canvasGen(userSize);
+  }
+});
 
 console.log("Hello World!");
