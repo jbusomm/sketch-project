@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(50, 50, 50);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,7 +9,11 @@
   width: 256px;
   flex-wrap: wrap;
 }
-
+.canvas {
+  display: flex;
+  justify-content: space-around;
+}
 h1 {
+  color: azure;
   text-align: center;
 }
